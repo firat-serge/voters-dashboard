@@ -1,0 +1,54 @@
+-- Table: sa.votes
+
+-- DROP TABLE IF EXISTS sa.votes;
+
+CREATE TABLE IF NOT EXISTS sa.votes
+(
+    "ADMIN_NAME" text COLLATE pg_catalog."default",
+    "Plaka" text COLLATE pg_catalog."default",
+    "Y_18" double precision,
+    "NUTS3_1" text COLLATE pg_catalog."default",
+    "PopDen" double precision,
+    "HouseSale" double precision,
+    "Divorce" double precision,
+    "Mariage" double precision,
+    "Hedu" double precision,
+    "Hedu_M" double precision,
+    "Hedu_F" double precision,
+    "Plate" double precision,
+    "Registered" double precision,
+    "Valid_Votes" double precision,
+    "Valid_vote" double precision,
+    "AKP" double precision,
+    "MHP" double precision,
+    "HUDA_PAR" double precision,
+    "VP" double precision,
+    "HDP" double precision,
+    "CHP" double precision,
+    "SP" double precision,
+    "IYIP" double precision,
+    "INDP" double precision,
+    "AKP_per" double precision,
+    geometry geometry(Geometry,32636),
+    "MHP_per" double precision,
+    "HUDA_PAR_per" double precision,
+    "VP_per" double precision,
+    "HDP_per" double precision,
+    "CHP_per" double precision,
+    "SP_per" double precision,
+    "IYIP_per" double precision,
+    "INDP_per" double precision
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS sa.votes
+    OWNER to postgres;
+-- Index: idx_votes_geometry
+
+-- DROP INDEX IF EXISTS sa.idx_votes_geometry;
+
+CREATE INDEX IF NOT EXISTS idx_votes_geometry
+    ON sa.votes USING gist
+    (geometry)
+    TABLESPACE pg_default;

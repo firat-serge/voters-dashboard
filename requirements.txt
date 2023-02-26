@@ -1,0 +1,10 @@
+requests
+geopandas
+PyYAML
+pyarrow
+SQLAlchemy
+psycopg2-binary
+geoalchemy2
+sqlalchemy<=2.0
+Flask
+Flask-SQLAlchemy

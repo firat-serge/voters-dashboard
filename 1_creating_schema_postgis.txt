@@ -1,0 +1,16 @@
+
+-- SCHEMA: sa
+
+-- DROP SCHEMA IF EXISTS sa ;
+
+CREATE SCHEMA IF NOT EXISTS sa
+    AUTHORIZATION postgres;
+
+
+-- Extension: postgis
+
+-- DROP EXTENSION postgis;
+
+CREATE EXTENSION IF NOT EXISTS postgis
+    SCHEMA public
+    VERSION "3.3.2";

@@ -1,0 +1,28 @@
+-- View: sa.votes_geojson
+
+-- DROP VIEW sa.votes_geojson;
+
+CREATE OR REPLACE VIEW sa.votes_geojson
+ AS
+ SELECT votes."Plaka",
+    votes."NUTS3_1",
+    votes."ADMIN_NAME",
+    votes."Y_18",
+    votes."PopDen",
+    votes."HouseSale",
+    votes."Hedu",
+    votes."AKP_per",
+    votes."MHP_per",
+    votes."HUDA_PAR_per",
+    votes."VP_per",
+    votes."HDP_per",
+    votes."CHP_per",
+    votes."SP_per",
+    votes."IYIP_per",
+    votes."INDP_per",
+    st_asgeojson(st_transform(votes.geometry, 4326)) AS geojson
+   FROM sa.votes;
+
+ALTER TABLE sa.votes_geojson
+    OWNER TO postgres;
+
